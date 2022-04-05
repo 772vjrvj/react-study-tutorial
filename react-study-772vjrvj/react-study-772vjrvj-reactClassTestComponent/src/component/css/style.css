@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  padding: 50px;
+  font: normal 18px/1.4 Arial, sans-serif;
+}
+
+.picker {
+  width: 190px;
+  background: #f0f0f4;
+  border-radius: 9px;
+}
+
+.picker .react-colorful {
+  width: auto;
+}
+
+.picker__swatches {
+  display: flex;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+
+.picker__swatches_box {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+
+
+.picker__swatch {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.select, .cancel {
+  background-color: white;
+  width: 80px;
+}
+
+.colorInput{
+  width: 160px;
+  outline: none;
+  text-align: center;
+}

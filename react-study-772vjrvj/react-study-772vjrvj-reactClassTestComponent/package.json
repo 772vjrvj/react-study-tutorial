@@ -1,0 +1,19 @@
+{
+  "name": "reactclasstestcomponents",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^4.18.2",
+    "react": "^16.3.1",
+    "react-color": "^2.19.3",
+    "react-colorful": "^5.5.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "set PORT=5000 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
