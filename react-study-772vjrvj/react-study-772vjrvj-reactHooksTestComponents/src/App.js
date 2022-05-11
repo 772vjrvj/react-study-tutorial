@@ -2,10 +2,11 @@ import React, { useRef, useState, useCallback } from 'react';
 import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert';
 import TodoList from './components/TodoList';
+import {arrayMoveImmutable} from 'array-move';
 
 function createBulkTodos() {
   const array = [];
-  for (let i = 1; i <= 2500; i++) {
+  for (let i = 1; i <= 5; i++) {
     array.push({
       id: i,
       text: `할 일 ${i}`,
@@ -44,10 +45,18 @@ const App = () => {
     );
   }, []);
 
+  const test = () => {
+    console.log('this :', this);
+  }
+
+  const onSortEnd = ({oldIndex, newIndex}) => {
+    setTodos(arrayMoveImmutable(todos, oldIndex, newIndex))
+  };
+
   return (
     <TodoTemplate>
       <TodoInsert onInsert={onInsert} />
-      <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
+      <TodoList distance={1} lockAxis="y" test={test} todos={todos} onRemove={onRemove} onToggle={onToggle} onSortEnd={onSortEnd}/>
     </TodoTemplate>
   );
 };

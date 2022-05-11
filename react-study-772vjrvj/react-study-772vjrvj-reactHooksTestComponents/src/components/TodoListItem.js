@@ -6,8 +6,9 @@ import {
 } from 'react-icons/md';
 import cn from 'classnames';
 import './TodoListItem.scss';
+import {SortableElement} from 'react-sortable-hoc';
 
-const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
+const TodoListItem = SortableElement(({ todo, onRemove, onToggle, style }) => {
   const { id, text, checked } = todo;
 
   return (
@@ -26,6 +27,6 @@ const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
       </div>
     </div>
   );
-};
+});
 
 export default React.memo(TodoListItem);

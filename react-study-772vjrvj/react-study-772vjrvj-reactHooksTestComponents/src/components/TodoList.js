@@ -2,13 +2,17 @@ import React, { useCallback } from 'react';
 import { List } from 'react-virtualized';
 import TodoListItem from './TodoListItem';
 import './TodoList.scss';
+import {SortableContainer} from 'react-sortable-hoc';
 
-const TodoList = ({ todos, onRemove, onToggle }) => {
+const TodoList = SortableContainer(({ todos, onRemove, onToggle, test }) => {
   const rowRenderer = useCallback(
     ({ index, key, style }) => {
       const todo = todos[index];
       return (
         <TodoListItem
+          test={test}
+          index={index}
+          value={todo}
           todo={todo}
           key={key}
           onRemove={onRemove}
@@ -31,6 +35,6 @@ const TodoList = ({ todos, onRemove, onToggle }) => {
       style={{ outline: 'none' }} // List에 기본 적용되는 outline 스타일 제거
     />
   );
-};
+});
 
 export default React.memo(TodoList);
